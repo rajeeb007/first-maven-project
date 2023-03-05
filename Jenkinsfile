@@ -32,7 +32,7 @@ pipeline{
         stage('static code analysi'){
              
             steps{
-                scripts{
+                
                     withSonarQubeEnv(credentialsId: 'sonar-api', installationName: 'MySonarQubeInstallation') {
                         sh 'mvn clean package sonar:sonar'
    
@@ -43,7 +43,7 @@ pipeline{
                     
     
                  
-                }
+                
               
             }
 
