@@ -33,11 +33,16 @@ pipeline{
              
             steps{
                 scripts{
-                  withSonarQubeEnv(credentialsId:'sonar-api') {
-                    sh 'mvn clean package sonar:sonar'
+                    withSonarQubeEnv(credentialsId: 'sonar-api', installationName: 'MySonarQubeInstallation') {
+                        sh 'mvn clean package sonar:sonar'
+   
+                    }
+
+                
+                    
                     
     
-                 }
+                 
                 }
               
             }
